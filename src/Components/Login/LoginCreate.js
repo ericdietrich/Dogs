@@ -19,8 +19,10 @@ const LoginCreate = () => {
       email: email.value,
       password: password.value,
     })
-    const response = await fetch (url, options) ;
-    userLogin (username.value, password.value);
+    const response = await fetch (url, options);
+    if (response.ok) {
+      userLogin (username.value, password.value);
+    }
   }
 
   return  <section className='animeLeft'>
